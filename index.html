@@ -128,8 +128,11 @@
     max-width:1280px; margin:0 auto; padding:0 32px; height:62px;
     display:flex; align-items:center; justify-content:space-between;
   }
-  .nav-brand{font-family:var(--mono); font-size:14px; font-weight:600; letter-spacing:.08em;}
+  .nav-brand{font-family:var(--mono); font-size:14px; font-weight:600; letter-spacing:.08em; display:flex; align-items:center; gap:10px;}
   .nav-brand span{color:var(--cyan);}
+  .nav-brand .brand-icons{display:flex; align-items:center; gap:6px;}
+  .nav-brand .brand-icon{height:26px; width:26px; object-fit:contain; filter:drop-shadow(0 0 6px rgba(79,209,224,.25));}
+  .nav-brand .brand-div{width:1px; height:18px; background:var(--line);}
   .nav-links{display:flex; gap:30px; list-style:none;}
   .nav-links a{
     font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
@@ -314,6 +317,10 @@
   .config-note .flag{color:var(--red); font-weight:600; flex-shrink:0;}
 
   footer{border-top:1px solid var(--line); padding:70px 0 40px; background:var(--bg-panel);}
+  .footer-brand{display:flex; align-items:center; gap:36px; padding-bottom:44px; margin-bottom:44px; border-bottom:1px solid var(--line);}
+  .footer-brand img{height:64px; width:auto; object-fit:contain;}
+  .footer-brand .fb-div{width:1px; height:44px; background:var(--line);}
+  @media (max-width:600px){.footer-brand{flex-wrap:wrap; gap:20px;} .footer-brand img{height:48px;}}
   .footer-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:50px;}
   @media (max-width:800px){.footer-grid{grid-template-columns:1fr; gap:36px;}}
   .footer-grid h4{font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-faint); margin-bottom:16px;}
@@ -416,7 +423,14 @@
 
 <nav>
   <div class="nav-inner">
-    <div class="nav-brand">A.R.C<span>.-6</span> / OSCI</div>
+    <div class="nav-brand">
+      <div class="brand-icons">
+        <img class="brand-icon" src="images/logo-arc6-icon.webp" alt="A.R.C.-6 emblem">
+        <div class="brand-div"></div>
+        <img class="brand-icon" src="images/logo-osci-icon.webp" alt="OSCI emblem">
+      </div>
+      A.R.C<span>.-6</span> / OSCI
+    </div>
     <ul class="nav-links">
       <li><a href="#overview">Overview</a></li>
       <li><a href="#reactors">Reactor Array</a></li>
@@ -431,7 +445,7 @@
 
 <!-- HERO -->
 <header class="hero">
-  <img class="hero-img" src="images/render-exterior.webp" alt="A.R.C.-6 Complex exterior at dusk">
+  <img class="hero-img" src="images/render-ext-front.webp" alt="A.R.C.-6 Complex exterior at dusk">
   <div class="hero-scrim"></div>
   <div class="hero-scanline"></div>
   <div class="hero-content wrap">
@@ -475,7 +489,7 @@
         <div class="scanline"></div>
         <div class="frame-cap top-left">Master Plan</div>
         <div class="frame-cap bottom-right">Scale 1:1000</div>
-        <img src="images/render-topdown.webp" alt="A.R.C.-6 master plan top-down site view">
+        <img src="images/render-ext-topdown.webp" alt="A.R.C.-6 master plan top-down site view">
       </div>
       <table class="spec-table reveal reveal-delay-1">
         <tr><td>Designation</td><td>A.R.C.-6 / OSCI</td></tr>
@@ -510,7 +524,7 @@
     <div class="plate frame reveal" style="margin-top:50px;">
       <div class="tick-tr"></div><div class="tick-bl"></div>
       <div class="scanline"></div>
-      <img src="images/render-cutaway.webp" alt="A.R.C.-6 complex vertical cutaway showing reactor pit and monolith">
+      <img src="images/render-ext-cutaway.webp" alt="A.R.C.-6 complex vertical cutaway showing reactor pit and monolith">
     </div>
     <div class="plate-caption reveal">
       <span>MONOLITH TO REACTOR DECK · FULL VERTICAL SECTION</span>
@@ -540,7 +554,7 @@
         <div class="scanline"></div>
         <div class="frame-cap top-left">Primary Reactor Floor</div>
         <div class="frame-cap bottom-right">6× Parallel Operation</div>
-        <img src="images/render-reactor-floor.webp" alt="A.R.C.-6 primary reactor floor with six-core array">
+        <img src="images/render-int-reactor.webp" alt="A.R.C.-6 primary reactor floor with six-core array">
       </div>
     </div>
   </div>
@@ -553,6 +567,14 @@
     <h2 class="section-title reveal">B1 and B2 — outside the count, inside the fuel cycle</h2>
     <p class="lede reveal">Two cylindrical pulsed D-D breeder cores sit in isolated shielded bays, deliberately distinct in geometry from the six primary modules. They supply helium-3 and a managed tritium reserve — and are never included in the A.R.C.-6 primary-core designation.</p>
     <p class="reveal"><a class="doc-link" href="#" data-doc="ddhe3">↓ D-D Helium-3 Breeding System</a></p>
+
+    <div class="plate frame reveal" style="margin:40px 0;">
+      <div class="tick-tr"></div><div class="tick-bl"></div>
+      <div class="scanline"></div>
+      <div class="frame-cap top-left">Aerial Approach</div>
+      <div class="frame-cap bottom-right">Cryogenic Service Shafts, East &amp; West</div>
+      <img src="images/render-ext-angle.webp" alt="A.R.C.-6 complex aerial view showing monolith and thermal towers at dusk">
+    </div>
 
     <div class="breeder-grid">
       <div class="breeder-card reveal">
@@ -580,7 +602,7 @@
         <div class="scanline"></div>
         <div class="frame-cap top-left">AGI Data Processing Floor</div>
         <div class="frame-cap bottom-right">Coherence Spine</div>
-        <img src="images/render-data-floor.webp" alt="A.R.C.-6 AGI data processing floor with coherence spine">
+        <img src="images/render-int-data.webp" alt="A.R.C.-6 AGI data processing floor with coherence spine">
       </div>
       <div class="reveal reveal-delay-1">
         <p class="lede">A.R.C. — Adaptive Resonance Confinement — is a classified photonic-magnetic system that generates a resonance-stabilized coherence envelope for Observer. It suppresses quantum decoherence, stabilizes photonic neuromorphic pathways, and enables long-range temporal correlation across multi-substrate reasoning. It is not a plasma-confinement system; reactor magnets handle that independently.</p>
@@ -694,6 +716,11 @@
 
 <footer>
   <div class="wrap">
+    <div class="footer-brand">
+      <img src="images/logo-arc6-full.webp" alt="A.R.C.-6 — Adaptive Resonance Confinement logo">
+      <div class="fb-div"></div>
+      <img src="images/logo-osci-full.webp" alt="O.S.C.I. — Observer Strategic Computation Initiative logo">
+    </div>
     <div class="footer-grid">
       <div>
         <h4>A.R.C.-6 Complex</h4>
