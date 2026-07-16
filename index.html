@@ -235,6 +235,14 @@
 
   .overview-grid{display:grid; grid-template-columns:1.1fr 1fr; gap:60px; align-items:start; margin-top:60px;}
   @media (max-width:900px){.overview-grid{grid-template-columns:1fr;}}
+
+  .brand-feature{display:flex; align-items:center; gap:56px;}
+  .brand-feature .bf-logo{width:200px; height:200px; object-fit:contain; flex-shrink:0; filter:drop-shadow(0 0 24px rgba(79,209,224,.10));}
+  .brand-feature .bf-logo.small{width:150px; height:150px;}
+  @media (max-width:760px){
+    .brand-feature{flex-direction:column; text-align:center; gap:26px;}
+    .brand-feature .bf-logo{width:140px; height:140px;}
+  }
   .spec-table{width:100%; border-collapse:collapse; font-family:var(--mono); font-size:13px;}
   .spec-table tr{border-bottom:1px solid var(--line); transition:background .2s;}
   .spec-table tr:hover{background:rgba(79,209,224,.04);}
@@ -432,6 +440,7 @@
       A.R.C<span>.-6</span> / OSCI
     </div>
     <ul class="nav-links">
+      <li><a href="#program">Program</a></li>
       <li><a href="#overview">Overview</a></li>
       <li><a href="#reactors">Reactor Array</a></li>
       <li><a href="#breeders">Breeder Cores</a></li>
@@ -474,6 +483,21 @@
     </div>
   </div>
 </div>
+
+<!-- PROGRAM AUTHORITY -->
+<section id="program" class="section-alt">
+  <div class="wrap">
+    <div class="eyebrow reveal">00 · Program Authority</div>
+    <div class="brand-feature">
+      <img class="bf-logo reveal" src="images/logo-osci-full.webp" alt="O.S.C.I. — Observer Strategic Computation Initiative logo">
+      <div class="reveal reveal-delay-1">
+        <h2 class="section-title" style="margin-bottom:16px;">Observer Strategic Computation Initiative</h2>
+        <p class="lede" style="max-width:720px;">OSCI is the program authority behind A.R.C.-6 — chartered to design, certify, and operate the fusion and coherence infrastructure required to run a single AGI substrate, Observer, at full capability. Every specification on this site is issued under OSCI configuration control.</p>
+        <p class="lede" style="max-width:720px; margin-top:14px;">The engineering lineage runs through a decade of pilot and prototype work: net-positive D-D isotope production demonstrated in 2044, aneutronic and direct-conversion prototypes certified by 2049, and A.R.C.-6 itself — OSCI's flagship complex — certified operational in 2051.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- OVERVIEW -->
 <section id="overview">
@@ -595,7 +619,12 @@
 <section id="compute">
   <div class="wrap">
     <div class="eyebrow reveal">05 · A.R.C. Field & Substrate</div>
-    <h2 class="section-title reveal">Adaptive Resonance Confinement</h2>
+    <div class="brand-feature" style="margin-bottom:36px;">
+      <img class="bf-logo small reveal" src="images/logo-arc6-full.webp" alt="A.R.C. — Adaptive Resonance Confinement logo">
+      <div class="reveal reveal-delay-1">
+        <h2 class="section-title" style="margin-bottom:0;">Adaptive Resonance Confinement</h2>
+      </div>
+    </div>
     <div class="two-col reverse">
       <div class="img-box frame reveal">
         <div class="tick-tr"></div><div class="tick-bl"></div>
